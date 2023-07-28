@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather-orNot</title>
+    <link rel="stylesheet" href="wG.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dokdo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <p class="title">W-oN</p>
+      <form id="search-city">
+        <div class="row">
+          <div class="col-8">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Type a city"
+              aria-label="Search"
+              autocomplete="off"
+              fdprocessedid="0klmi8"
+              id="display-city"
+            />
+          </div>
+          <div class="col-3">
+            <input id="button" type="submit" value="Search" />
+          </div>
+          <div class="col-1">
+            <input id="location" type="submit" value="📍" />
+          </div>
+        </div>
+      </form>
+      <h1>Johannesburg</h1>
+      <div class="row">
+        <div class="col-8 current">
+          <img
+            src="https://em-content.zobj.net/source/microsoft-teams/363/sun-behind-small-cloud_1f324-fe0f.png"
+            width="200"
+          />
+        </div>
+        <div class="col-4">
+          <span class="temperature" id="temperature">27</span>
+          <span class="units">
+            <a href="#" id="cels">°C</a>
+            <p class="pipe">|</p>
+            <a href="#" id="fahr">°F</a>
+          </span>
+        </div>
+      </div>
+      <h2>loading...</h2>
+      <br />
+      <br />
+      <div class="row">
+        <div class="col today">
+          Today
+          <p class="weather">🌤️</p>
+          <p class="max">27°</p>
+          <p class="min">23°</p>
+        </div>
+        <div class="col">
+          Tue
+          <p class="weather">☁️</p>
+          <p class="max">27°</p>
+          <p class="min">21°</p>
+        </div>
+        <div class="col">
+          Wed
+          <p class="weather">⛈️</p>
+          <p class="max">20°</p>
+          <p class="min">15°</p>
+        </div>
+        <div class="col">
+          Thurs
+          <p class="weather">☀️</p>
+          <p class="max">27°</p>
+          <p class="min">24°</p>
+        </div>
+        <div class="col">
+          Fri
+          <p class="weather">🌦️</p>
+          <p class="max">28°</p>
+          <p class="min">22°</p>
+        </div>
+      </div>
+      <p class="conclusion">Coded by Chae</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
