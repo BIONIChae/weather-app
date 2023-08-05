@@ -2,11 +2,19 @@
   margin: 40px auto;
   padding: 50px;
   max-width: 600px;
-  border: 4px solid rgb(57, 57, 57);
+  border: 4px solid rgba(57, 57, 57, 0.172);
   border-radius: 8px;
-  background-image: url("https://media.istockphoto.com/id/1314540947/vector/scenery-with-coastline-sea-and-blue-sky.jpg?s=612x612&w=0&k=20&c=tuWK4uk4ZmzeQyIsUdmqyxYRGyqE5nJgqf50G2xoCXo=");
+  background-image: url("https://i.pinimg.com/736x/c6/d5/b1/c6d5b1c92fc4777b11ef79e6b24c4df8.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.morn {
+  background-image: url("https://i.pinimg.com/736x/c6/d5/b1/c6d5b1c92fc4777b11ef79e6b24c4df8.jpg");
+}
+
+.even {
+  background-image: url("https://em-content.zobj.net/source/microsoft-teams/363/sun-behind-rain-cloud_1f326-fe0f.png");
 }
 
 h1 {
@@ -17,19 +25,42 @@ h1 {
 }
 h2 {
   font-family: "Dokdo", cursive;
-  color: rgb(79, 79, 79);
+  color: rgb(79, 79, 79); 
 }
-.col {
-  color: rgb(55, 55, 55);
+
+#description {
+  font-family: "Dokdo", cursive;
   font-size: 20px;
+  color: rgb(204, 204, 204);
+  font-weight: 100;
+}
+
+#windspeed,
+#humidity {
+  font-size: 40px;
+  color: rgb(204, 204, 204);
+  font-weight: 100;
+  text-decoration: none;
+  padding-right: 20px;
   font-family: "Baloo 2", cursive;
+}
+
+#windspeed:hover,
+#humidity:hover {
+  color: rgb(255, 234, 207);
+}
+
+.col {
+  color: rgb(255, 247, 247);
+  font-size: 20px;
+  font-family: "Dokdo", cursive;
   text-align: center;
   border-radius: 10px;
 }
 .col:hover {
-  color: rgb(115, 147, 95);
+  color: rgb(129, 129, 129);
   cursor: pointer;
-  background-color: rgb(147, 255, 255);
+  background-color: rgb(160, 171, 255);
 }
 .col-4 {
   text-align: right;
@@ -37,15 +68,15 @@ h2 {
 }
 
 #location {
-  background-color: rgb(129, 196, 255);
-  border: 2px solid rgb(115, 167, 214);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgb(255, 255, 255);
   padding: 6px 5px;
   border-radius: 54%;
 }
 
 #location:hover {
-  background-color: rgba(118, 118, 118, 0.2);
-  border: 2px solid rgb(115, 167, 214);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgb(255, 255, 255);
 }
 
 #location:active {
@@ -56,11 +87,12 @@ h2 {
 }
 
 .today {
-  background: rgb(255, 253, 109);
+  background: rgb(255, 254, 177);
+  color: rgb(42, 42, 42);
 }
 
 .min {
-  font-family: "Geologica", sans-serif;
+  font-family: "Dokdo", sans-serif;
 }
 .temp {
   color: rgb(255, 255, 255, 0.8);
@@ -90,14 +122,21 @@ h2 {
   color: rgb(255, 253, 109);
 }
 
+#cels,
+#fahr {
+  color: rgb(253, 232, 204);
+}
+
 .pipe {
   color: aliceblue;
 }
 
 #display-city {
-  background: rgb(232, 255, 163);
-  border-radius: 0%;
+  background: rgb(255, 204, 157);
+  border: 2px solid rgb(255, 159, 70);
+  border-radius: 4px;
   padding: 6px 8px;
+  margin-left: 60px;
   font-family: "Press Start 2P", cursive;
 }
 
@@ -114,19 +153,23 @@ h2 {
 }
 
 #button {
-  border: 1px solid rgb(191, 255, 0);
-  background-color: rgb(191, 255, 0);
+  border: 1px solid rgb(255, 159, 70);
+  background-color: rgb(255, 159, 70);
   color: white;
   font-weight: 900;
   transition: 160ms ease-in-out;
-  padding: 6px 8px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  margin-left: 50px;
 }
 
 #button:hover {
   background-color: rgb(255, 253, 109);
-  border: 3px solid rgb(255, 253, 109);
+  color: rgb(160, 171, 255);
+  border: none;
   cursor: pointer;
 }
+
 .title {
   color: rgba(245, 245, 245, 0.702);
   font-family: "Oi", cursive;
@@ -135,7 +178,7 @@ h2 {
 }
 
 .github {
-  color: #a2d400;
+  color: rgb(158, 255, 97;
   text-decoration: none;
   cursor: pointer;
 }
@@ -143,10 +186,12 @@ h2 {
 .github:hover {
   text-decoration: underline;
 }
+
 .conclusion {
   text-align: center;
   font-family: "Press Start 2P", cursive;
-  color: rgb(186, 114, 0);
+  font-size: 10px;
+  color: rgb(254, 255, 217);
   display: block;
   margin-top: 30px;
   margin-bottom: 0px;
