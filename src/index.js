@@ -65,12 +65,21 @@ function showTemp(response) {
     );
   }
 
-  if (response.data.weather[0].description === "clear sky") {
+  if (
+    response.data.weather[0].icon === "01n" &&
+    response.data.weather[0].description === "clear sky"
+  ) {
+    symbol.setAttribute(
+      "src",
+      `https://em-content.zobj.net/source/telegram/358/full-moon_1f315.webp`
+    );
+  } else if (response.data.weather[0].description === "clear sky") {
     symbol.setAttribute(
       "src",
       `https://em-content.zobj.net/source/microsoft-teams/363/sun_2600-fe0f.png`
     );
   }
+  
   if (response.data.weather[0].description === "few clouds") {
     symbol.setAttribute(
       "src",
