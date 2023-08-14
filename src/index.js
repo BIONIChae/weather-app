@@ -12,6 +12,7 @@ if (hours < 10) {
 
 if (hours >= 18 && hours <= 23) {
   let backdrop = document.querySelector(".container");
+  let symbol = document.querySelector("#symbol");
   let tempColor = document.querySelector("#temperature");
   let button = document.querySelector("#button");
   let search = document.querySelector("#display-city");
