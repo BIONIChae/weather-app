@@ -1,52 +1,64 @@
-let now = new Date();
-let hours = now.getHours();
-let mins = now.getMinutes();
-let h2 = document.querySelector("h2");
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let mins = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-if (mins < 10) {
-  mins = mins.toString().padStart(2, "0");
-}
-if (hours < 10) {
-  hours = hours.toString().padStart(2, "0");
-}
+  if (mins < 10) {
+    mins = mins.toString().padStart(2, "0");
+  }
+  if (hours < 10) {
+    hours = hours.toString().padStart(2, "0");
+  }
 
-if (hours >= 18 && hours <= 23) {
-  let backdrop = document.querySelector(".container");
-  let symbol = document.querySelector("#symbol");
-  let tempColor = document.querySelector("#temperature");
-  let button = document.querySelector("#button");
-  let search = document.querySelector("#display-city");
-  let column = document.querySelector(".col-2");
-  let moon = document.querySelector(".weather");
-  let cityName = document.querySelector("#city-name");
-  let dateTime = document.querySelector("#time-date");
-  let maxTemp = document.querySelector(".max");
-  let minTemp = document.querySelector(".min");
-  backdrop.style.background = `url("https://4kwallpapers.com/images/wallpapers/full-moon-forest-night-dark-starry-sky-5k-8k-2560x2560-1684.jpg")`;
-  backdrop.style.backgroundSize = "cover";
-  symbol.setAttribute(
-    "src",
-    `https://em-content.zobj.net/source/telegram/358/full-moon_1f315.webp`
-  );
-  tempColor.style.color = `rgb(255, 242, 0)`;
-  button.style.backgroundColor = `black`;
-  search.style.backgroundColor = `grey`;
-  search.style.color = "white";
-  column.style.backgroundImage = `linear-gradient(
+  if (hours >= 18 && hours <= 23) {
+    let backdrop = document.querySelector(".container");
+    let tempColor = document.querySelector("#temperature");
+    let button = document.querySelector("#button");
+    let search = document.querySelector("#display-city");
+    let column = document.querySelector(".col-2");
+    let symbol = document.querySelector("#symbol");
+    let moon = document.querySelector(".weather");
+    let cityName = document.querySelector("#city-name");
+    let dateTime = document.querySelector("#time-date");
+    let maxTemp = document.querySelector(".max");
+    let minTemp = document.querySelector(".min");
+    backdrop.style.background = `url("https://4kwallpapers.com/images/wallpapers/full-moon-forest-night-dark-starry-sky-5k-8k-2560x2560-1684.jpg")`;
+    backdrop.style.backgroundSize = "cover";
+    symbol.setAttribute(
+      "src",
+      `https://em-content.zobj.net/source/telegram/358/full-moon_1f315.webp`
+    );
+    tempColor.style.color = `rgb(255, 242, 0)`;
+    button.style.backgroundColor = `black`;
+    search.style.backgroundColor = `grey`;
+    search.style.color = "white";
+    column.style.backgroundImage = `linear-gradient(
     to bottom,
     rgb(0, 7, 136),
     rgb(0, 0, 0)
   )`;
-  moon.setAttribute(
-    "src",
-    "https://em-content.zobj.net/source/twitter/348/new-moon_1f311.png"
-  );
-  cityName.style.color = `white`;
-  dateTime.style.color = `white`;
-  minTemp.style.color = `white`;
-  maxTemp.style.color = `white`;
+    moon.setAttribute(
+      "src",
+      "https://em-content.zobj.net/source/twitter/348/new-moon_1f311.png"
+    );
+    cityName.style.color = `white`;
+    dateTime.style.color = `white`;
+    minTemp.style.color = `white`;
+    maxTemp.style.color = `white`;
+  }
+  let day = days[date.getDay()];
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = `${day} ${hours}:${mins}`;
 }
-h2.innerHTML = `${day} | ${hours}:${mins}`;
 
 function city(event) {
   event.preventDefault();
@@ -199,10 +211,11 @@ function weeklyForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index > 0 && index < 9) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2">
+          <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
           <img
           class="weather"
           src="https://em-content.zobj.net/source/joypixels-animations/366/sun_2600-fe0f.gif"
@@ -210,8 +223,8 @@ function weeklyForecast(response) {
           width="60"
         />
         <div class="temps">
-          <span class="max">${forecastDay.temp.max}°</span>
-          <span class="min">${forecastDay.temp.min}°</span>
+          <span class="max">${Math.round(forecastDay.temp.max)}°</span>
+          <span class="min">${Math.round(forecastDay.temp.min)}°</span>
         </div>
       </div>`;
     }
@@ -221,9 +234,9 @@ function weeklyForecast(response) {
 }
 
 function formatDay(timestamp) {
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let date = new Date(timestamp * 1000);
-  let day = days[date.getDay()];
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
 }
