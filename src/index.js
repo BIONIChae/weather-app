@@ -56,8 +56,7 @@ function formatDate(timestamp) {
     maxTemp.style.color = `white`;
   }
   let day = days[date.getDay()];
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${day} ${hours}:${mins}`;
+  return `${day} ${hours}:${mins}`;
 }
 
 function city(event) {
@@ -76,9 +75,11 @@ function showTemp(response) {
   console.log(response.data);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = Math.round(response.data.main.temp);
+  let dateElement = document.querySelector("#time-date");
   let symbol = document.querySelector("img");
   celsiusTemp = response.data.main.temp;
 
+  dateElement.innerHTML = formatDate(response.dt * 1000);
   if (response.data.weather[0].description === "light rain") {
     symbol.setAttribute(
       "src",
