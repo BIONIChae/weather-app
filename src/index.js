@@ -75,8 +75,8 @@ function showTemp(response) {
   console.log(response.data);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = Math.round(response.data.main.temp);
+  let symbol = document.querySelector("#symbol");
   let dateElement = document.querySelector("#time-date");
-  let symbol = document.querySelector("img");
   celsiusTemp = response.data.main.temp;
 
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -157,7 +157,9 @@ function showTemp(response) {
   let humidity = document.querySelector("#humidity");
 
   description.innerHTML = response.data.weather[0].description;
-  windspeed.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  windspeed.innerHTML = `Wind: ${Math.round(
+    response.data.wind.speed * 3.6
+  )} km/h`;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   getForecast(response.data.coord);
 }
@@ -197,7 +199,7 @@ celsius.addEventListener("click", convertToCels);
 function convertToFahr(event) {
   event.preventDefault();
   fahrenheit.classList.add("active");
-  cels.classList.remove("active");
+  celsius.classList.remove("active");
   let temper = document.querySelector("#temperature");
   let displayfahr = Math.round((celsiusTemp * 9) / 5 + 32);
   temper.innerHTML = displayfahr;
@@ -209,6 +211,7 @@ let celsiusTemp = null;
 
 function weeklyForecast(response) {
   let forecast = response.data.daily;
+  console.log(forecast);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
@@ -217,14 +220,14 @@ function weeklyForecast(response) {
         forecastHTML +
         `<div class="col-2">
           <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-          <img
-          class="weather"
-          src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt="sun"
-          width="60"
-        />
+          <img 
+            src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"
+            alt="" 
+            width="60"
+            class="weather"
+            />
         <div class="temps">
           <span class="max">${Math.round(forecastDay.temp.max)}°</span>
           <span class="min">${Math.round(forecastDay.temp.min)}°</span>
