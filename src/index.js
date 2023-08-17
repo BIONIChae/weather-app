@@ -164,7 +164,7 @@ function showTemp(response) {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "a969311cfcbb4a83dfad2cf7478397f9";
+  let apiKey = "1a2b7258ebd456c01aef9175dfe8b709";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(weeklyForecast);
@@ -243,3 +243,39 @@ function formatDay(timestamp) {
 
   return days[day];
 }
+
+function darkness(event) {
+  event.preventDefault();
+  let backdrop = document.querySelector(".container");
+  let tempColor = document.querySelector("#temperature");
+  let button = document.querySelector("#button");
+  let search = document.querySelector("#display-city");
+  let column = document.querySelector(".col-2");
+  let symbol = document.querySelector("#symbol");
+  let cityName = document.querySelector("#city-name");
+  let dateTime = document.querySelector("#time-date");
+  let maxTemp = document.querySelector(".max");
+  let minTemp = document.querySelector(".min");
+  backdrop.style.background = `url("https://4kwallpapers.com/images/wallpapers/full-moon-forest-night-dark-starry-sky-5k-8k-2560x2560-1684.jpg")`;
+  backdrop.style.backgroundSize = "cover";
+  symbol.setAttribute(
+    "src",
+    `https://em-content.zobj.net/source/telegram/358/full-moon_1f315.webp`
+  );
+  tempColor.style.color = `rgb(255, 242, 0)`;
+  button.style.backgroundColor = `black`;
+  search.style.backgroundColor = `grey`;
+  search.style.color = "white";
+  column.style.backgroundImage = `linear-gradient(
+    to bottom,
+    rgb(0, 7, 136),
+    rgb(0, 0, 0)
+  )`;
+  cityName.style.color = `white`;
+  dateTime.style.color = `white`;
+  minTemp.style.color = `white`;
+  maxTemp.style.color = `white`;
+}
+
+let nightMode = document.querySelector("#night-time");
+nightMode.addEventListener("click", darkness);
