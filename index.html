@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" cont +ent="width=device-width, initial-scale=1.0" />
     <title>Weather-ON</title>
-    <link rel="stylesheet" href="src\styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,11 +27,11 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sail&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sail&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -60,11 +60,12 @@
           </div>
         </div>
       </form>
-      <h1>↺</h1>
+      <h1 class="city-name">↺</h1>
       <div class="row">
         <div class="col-8 current">
           <img
-            src="https://em-content.zobj.net/source/microsoft-teams/363/sun-behind-small-cloud_1f324-fe0f.png"
+            id="symbol"
+            src="https://em-content.zobj.net/source/microsoft-teams/363/sun_2600-fe0f.png"
             width="200"
           />
         </div>
@@ -78,16 +79,33 @@
         </div>
       </div>
       <h2 id="time-date">↺</h2>
-      <h3 id="description">Feels like...</h3>
-      <span id="windspeed">Wind</span>
-      <span id="humidity">Humidity</span>
+      <h3 id="description" class="col-2">Feels like...</h3>
+      <span id="windspeed"
+        ><p class="wind-icon">༄</p>
+        Wind</span
+      >
+      <span id="humidity"
+        ><img
+          class="droplet"
+          src="https://em-content.zobj.net/thumbs/120/twitter/348/droplet_1f4a7.png"
+          width="40"
+        />Humidity</span
+      >
       <br />
       <hr />
       <div class="weather-forecast" id="forecast"></div>
       <hr />
       <button id="night-time">🌛</button>
-      <p class="conclusion"><a class="github" href="https://github.com/BIONIChae/weather-app">Open Source Code</a> by Chae👽</p>
+      <p class="conclusion">
+        <a
+          class="github"
+          href="https://github.com/BIONIChae/weather-app/tree/main/src"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Chae👽
+      </p>
     </div>
-    <script src="src\index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
