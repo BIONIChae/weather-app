@@ -16,40 +16,62 @@ h1 {
   padding-top: 50px;
   text-align: right;
 }
-
+.city-name {
+  color: aliceblue;
+}
 h2 {
   font-family: "Sail", cursive;
-}
-
-#description {
-  font-family: "Baloo 2", cursive;
-  font-size: 20px;
-  color: rgba(255, 72, 0, 0.812);
-  font-weight: 100;
-}
-
-#windspeed,
-#humidity {
-  font-size: 40px;
-  color: rgb(204, 204, 204);
-  font-weight: 100;
-  text-decoration: none;
-  padding-right: 20px;
-  font-family: "Baloo 2", cursive;
-}
-
-#windspeed:hover,
-#humidity:hover {
-  color: rgb(255, 234, 207);
 }
 #time-date {
   color: rgb(160, 160, 160);
 }
 
+hr {
+  height: 10px;
+}
+#description {
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.812);
+  font-weight: 100;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 5px 10px;
+  background-color: rgb(255, 255, 155);
+}
+
+#windspeed,
+#humidity {
+  font-size: 40px;
+  color: rgb(39, 39, 39);
+  font-weight: 100;
+  text-decoration: none;
+  padding-right: 20px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 12px;
+  background: rgb(255, 255, 129);
+  border: 2px dashed rgb(37, 37, 37);
+}
+
+#windspeed {
+  margin-left: 200px;
+}
+
+#humidity {
+  margin-left: 80px;
+}
+
+.wind-icon {
+  font-size: 40px;
+  display: inline;
+}
 .col-2 {
   background-image: linear-gradient(
     to bottom,
-    rgb(62, 226, 255),
+    rgb(116, 217, 232),
     rgb(213, 254, 255)
   );
   font-size: 20px;
@@ -60,10 +82,14 @@ h2 {
   border: 4px solid rgba(57, 57, 57, 0.172);
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
-.col:hover {
+.col-2:hover {
   color: rgb(129, 129, 129);
   cursor: pointer;
   background-color: rgb(160, 171, 255);
+}
+
+#daily:hover {
+  cursor: pointer;
 }
 .col-4 {
   text-align: right;
@@ -71,20 +97,16 @@ h2 {
 }
 
 #location {
-  background-color: rgba(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.102);
+  border: 1px solid rgba(255, 255, 255, 0.101);
   padding: 6px 6px;
   border-radius: 54%;
 }
 
 #location:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid rgba(255, 255, 255, 0.042);
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.474);
-}
-
-#location:active {
-  background-color: rgb(233, 233, 233);
 }
 .max {
   color: rgb(17, 17, 17);
@@ -97,13 +119,11 @@ h2 {
   display: block;
   margin: 20px 0;
 }
-
 .temp {
-  color: rgb(255, 255, 255, 0.907);
+  color: rgba(255, 255, 255, 0.907);
   text-align: right;
   font-size: 100px;
 }
-
 .temp:hover .current:hover {
   background-color: rgba(255, 255, 255, 0);
   color: rgb(255, 255, 255, 0.8);
@@ -131,7 +151,6 @@ h2 {
 #fahr {
   color: rgb(253, 232, 204);
 }
-
 .pipe {
   color: aliceblue;
 }
@@ -156,7 +175,7 @@ h2 {
 .temperature {
   display: inline;
   font-size: 100px;
-  color: rgb(255, 255, 2);
+  color: rgb(255, 255, 255);
   font-family: "Oi", cursive;
 }
 
@@ -177,24 +196,12 @@ h2 {
   border: none;
   cursor: pointer;
 }
-
 .title {
   color: rgba(245, 245, 245, 0.702);
   font-family: "Oi", cursive;
   text-align: center;
   font-size: 30px;
 }
-
-.github {
-  color: rgb(158, 255, 97);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.github:hover {
-  text-decoration: underline;
-}
-
 .conclusion {
   text-align: center;
   font-family: "Press Start 2P", cursive;
@@ -203,6 +210,16 @@ h2 {
   display: block;
   margin-top: 30px;
   margin-bottom: 0px;
+}
+
+.github {
+  color: rgb(158, 255, 97);
+  text-decoration: none;
+}
+
+.github:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .weather-forecast-date {
