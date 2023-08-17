@@ -79,7 +79,7 @@ function showTemp(response) {
   let symbol = document.querySelector("img");
   celsiusTemp = response.data.main.temp;
 
-  dateElement.innerHTML = formatDate(response.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   if (response.data.weather[0].description === "light rain") {
     symbol.setAttribute(
       "src",
